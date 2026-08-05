@@ -8,11 +8,11 @@ A frp server plugin to restrict allowed ports, subdomains and custom domains for
 
 This project has been maintained through several forks:
 
-| Stage | Repository | Status |
-|-------|-----------|--------|
-| Original author | [Parmicciano/frp_plugin_allowed_ports](https://github.com/Parmicciano/frp_plugin_allowed_ports) | No longer maintained |
-| Second maintainer | [gainskills/frp_plugin_allowed_ports](https://github.com/gainskills/frp_plugin_allowed_ports) | No longer maintained |
-| **Current maintainer** | [**kaligemr/frp_plugin_allowed_ports**](https://github.com/kaligemr/frp_plugin_allowed_ports) | **Active** |
+| Stage | Repository | Status | License |
+|-------|------------|--------|---------|
+| Original author | [Parmicciano/frp_plugin_allowed_ports](https://github.com/Parmicciano/frp_plugin_allowed_ports) | No longer maintained | Apache-2.0 |
+| Second maintainer | [gainskills/frp_plugin_allowed_ports](https://github.com/gainskills/frp_plugin_allowed_ports) | No longer maintained | Apache-2.0 |
+| **Current maintainer** | [**kaligemr/frp_plugin_allowed_ports**](https://github.com/kaligemr/frp_plugin_allowed_ports) | **Active** | Apache-2.0 |
 
 Note: "Active" does not mean continuously maintained; this repository may stop being maintained at any time.
 

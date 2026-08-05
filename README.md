@@ -8,11 +8,11 @@ frp 服务端插件，用于为 [frp](https://github.com/fatedier/frp) 的特定
 
 本项目历经多次 fork 维护：
 
-| 阶段 | 仓库 | 状态 |
-|------|------|------|
-| 原始作者 | [Parmicciano/frp_plugin_allowed_ports](https://github.com/Parmicciano/frp_plugin_allowed_ports) | 已停止维护 |
-| 第二次维护 | [gainskills/frp_plugin_allowed_ports](https://github.com/gainskills/frp_plugin_allowed_ports) | 已停止维护 |
-| **当前维护** | [**kaligemr/frp_plugin_allowed_ports**](https://github.com/kaligemr/frp_plugin_allowed_ports) | **正在维护** |
+| 阶段 | 仓库 | 状态 | 许可证 |
+|------|------|------|--------|
+| 原始作者 | [Parmicciano/frp_plugin_allowed_ports](https://github.com/Parmicciano/frp_plugin_allowed_ports) | 已停止维护 | Apache-2.0 |
+| 第二次维护 | [gainskills/frp_plugin_allowed_ports](https://github.com/gainskills/frp_plugin_allowed_ports) | 已停止维护 | Apache-2.0 |
+| **当前维护** | [**kaligemr/frp_plugin_allowed_ports**](https://github.com/kaligemr/frp_plugin_allowed_ports) | **正在维护** | Apache-2.0 |
 
 注意：正在维护不代表持续维护，此仓库随时可能停止维护
 

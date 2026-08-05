@@ -1,0 +1,46 @@
+frp_plugin_allowed_ports — Fork History & Attribution
+=====================================================
+
+Original Project
+----------------
+Project : frp_plugin_allowed_ports
+Author  : Parmicciano
+Copyright : 2022 Parmicciano
+License : Apache License, Version 2.0
+Repository : https://github.com/Parmicciano/frp_plugin_allowed_ports
+Status : No longer maintained (first push 2022-05-17)
+
+Second Fork
+-----------
+Project : frp_plugin_allowed_ports
+Author  : gainskills
+Copyright : gainskills
+License : Apache License, Version 2.0
+Repository : https://github.com/gainskills/frp_plugin_allowed_ports
+Status : No longer maintained
+
+Current Maintenance Fork
+------------------------
+Project : frp_plugin_allowed_ports
+Maintainer : kaligemr
+Copyright : 2026 kaligemr
+License : Apache License, Version 2.0
+Repository : https://github.com/kaligemr/frp_plugin_allowed_ports
+Status : Actively maintained (may stop at any time)
+
+Modifications by kaligemr (2026)
+---------------------------------
+- Added port range support
+- Added wildcard domain support
+- Partial log message localization to Chinese
+
+All modifications are licensed under the Apache License, Version 2.0.
+Original copyright, patent, trademark and attribution notices in source
+files are retained unchanged.
+
+This product includes software developed by:
+  - Parmicciano (original work, 2022)
+  - gainskills (intermediate fork)
+  - kaligemr (modifications, 2026)
+
+Apache License 2.0 text is provided in the LICENSE file in this repository.
