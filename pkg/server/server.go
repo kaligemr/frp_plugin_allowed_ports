@@ -40,7 +40,7 @@ func (s *Server) Run() error {
 	if err != nil {
 		return err
 	}
-	log.Printf("HTTP server listen on %s", l.Addr().String())
+	log.Printf("HTTP服务器监听于 %s", l.Addr().String())
 	go func() {
 		if err = s.s.Serve(l); err != http.ErrServerClosed {
 			log.Printf("error shutdown HTTP server: %v", err)

@@ -43,6 +43,7 @@ func contains(s []string, str string) bool {
 //   - 纯数字：精确匹配单个端口
 func matchPort(rule string, port int) bool {
 	rule = strings.TrimSpace(strings.ToLower(rule))
+	fmt.Println("[调试]] 规则:%s\t, 端口:%s\t",rule ,port )
 
 	// all 等价于 1-65535
 	if rule == "all" {
@@ -71,6 +72,7 @@ func matchPort(rule string, port int) bool {
 	if err != nil {
 		return false
 	}
+	fmt.Println("调试: matchPort 返回 p: %s\t", p)
 	return p == port
 }
 
@@ -86,6 +88,7 @@ func matchDomain(rule string, domain string) bool {
 
 	// all 匹配任意域名
 	if rule == "all" {
+	    fmt.Println("[调试] 允许域名 - all规则 ")
 		return true
 	}
 
@@ -148,14 +151,14 @@ func (c *OpController) HandleLogin(ctx *gin.Context) (interface{}, error) {
 		}
 	}
 
-	fmt.Println("-------------Plugin: Allowed Ports--------------------")
-	fmt.Printf("ProxyName: %s\tProxyType%s\t", content.ProxyName, content.ProxyType)
+	fmt.Println("-------------插件: Allowed Ports--------------------")
+	fmt.Printf("代理名称: %s\t代理方式%s\t", content.ProxyName, content.ProxyType)
 	if strings.ToLower(content.ProxyType) == "tcp" || strings.ToLower(content.ProxyType) == "udp" {
-		fmt.Printf("RemotePort: %d\r\n", content.RemotePort)
+		fmt.Printf("远程端口: %d\r\n", content.RemotePort)
 	} else if strings.HasPrefix(content.ProxyType, "http") {
-		fmt.Printf("CustomDomains%s\r\n", content.CustomDomains)
+		fmt.Printf("自定义域名%s\r\n", content.CustomDomains)
 	} else {
-		fmt.Println("Won't do validation for this type")
+		fmt.Println("此类型将不进行验证")
 		res.Unchange = true
 		return res, nil
 	}
@@ -166,11 +169,17 @@ func (c *OpController) HandleLogin(ctx *gin.Context) (interface{}, error) {
 
 	if subdomain == "" && remoteport == 0 && len(content.CustomDomains) == 0 {
 		res.Reject = true
-		res.RejectReason = "Rejected due to misconfiguration of the client"
+		res.RejectReason = "因客户端配置错误而被拒绝"
 	}
 
 	find := false
 	isTCPUDP := strings.ToLower(content.ProxyType) == "tcp" || strings.ToLower(content.ProxyType) == "udp"
+
+	// ===== 诊断信息 =====
+	rules := c.ports[username]
+	fmt.Printf("[调试] 用户名: %q, 规则: %v (len=%d), 远程端口: %d, 子域: %q, 自定义域名: %v\n",
+		username, rules, len(rules), remoteport, subdomain, content.CustomDomains)
+	// ====================
 
 	for _, rule := range c.ports[username] {
 		// all 直接放行一切（所有协议、端口、域名）
@@ -197,7 +206,7 @@ func (c *OpController) HandleLogin(ctx *gin.Context) (interface{}, error) {
 
 	if !find {
 		res.Reject = true
-		res.RejectReason = "Client is not allowed => Port or subdomain false"
+		res.RejectReason = "客户端被禁止 => 端口或子域名无效"
 	}
 
 	if !res.Reject {
