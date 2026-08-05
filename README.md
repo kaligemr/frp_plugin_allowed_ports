@@ -27,18 +27,18 @@ frp 服务端插件，用于为 [frp](https://github.com/fatedier/frp) 的特定
 
 依赖 [fp-multiuser](https://github.com/gofrp/fp-multiuser)。
 
-### 📦 下载
+### 下载
 
 从 [Release](https://github.com/kaligemr/frp_plugin_allowed_ports/releases) 页面下载预编译二进制文件。
 
-### 📋 要求
+### 要求
 
 frp 版本 >= v0.42.0。
 
 更低版本可能也能运行，但未经过测试。
 注意：此内容由原仓库fork而来，没有经过测试。
 
-### 🚀 使用方法
+### 使用方法
 
 支持 `tcp`、`udp`、`http`（含 custom_domains 和 subdomains）类型的校验。
 

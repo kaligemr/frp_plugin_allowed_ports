@@ -27,18 +27,18 @@ Note: "Active" does not mean continuously maintained; this repository may stop b
 
 Depends on [fp-multiuser](https://github.com/gofrp/fp-multiuser).
 
-### 📦 Download
+### Download
 
 Download prebuilt binaries from the [Release](https://github.com/kaligemr/frp_plugin_allowed_ports/releases) page.
 
-### 📋 Requirements
+### Requirements
 
 frp version >= v0.42.0.
 
 The plugin may work with older versions but has not been tested.
 Note: this project is forked from the original repository and has not been fully tested.
 
-### 🚀 Usage
+### Usage
 
 Works with `tcp`, `udp`, and `http` (including custom_domains and subdomains) proxy types.
 
