@@ -43,7 +43,7 @@ func (s *Server) Run() error {
 	log.Printf("HTTP服务器监听于 %s", l.Addr().String())
 	go func() {
 		if err = s.s.Serve(l); err != http.ErrServerClosed {
-			log.Printf("error shutdown HTTP server: %v", err)
+			log.Printf("HTTP 服务器关闭失败：%v", err)
 		}
 	}()
 	<-s.done
@@ -54,16 +54,16 @@ func (s *Server) Stop() error {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 	if err := s.s.Shutdown(ctx); err != nil {
-		log.Fatalf("shutdown HTTP server error: %v", err)
+		log.Fatalf("HTTP 服务器关闭错误: %v", err)
 	}
-	log.Printf("HTTP server exited")
+	log.Printf("HTTP 服务器已退出")
 	close(s.done)
 	return nil
 }
 
 func (s *Server) init() error {
 	if err := s.initHTTPServer(); err != nil {
-		log.Printf("init HTTP server error: %v", err)
+		log.Printf("HTTP 服务器初始化错误: %v", err)
 		return err
 	}
 	return nil

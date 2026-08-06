@@ -26,7 +26,7 @@ func MakeGinHandlerFunc(handler HandlerFunc) gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		res, err := handler(ctx)
 		if err != nil {
-			log.Printf("handle %s error: %v", ctx.Request.URL.Path, err)
+			log.Printf("处理 %s 出错：%v", ctx.Request.URL.Path, err)
 			switch e := err.(type) {
 			case *HTTPError:
 				ctx.JSON(e.Code, &Response{Msg: e.Err.Error()})

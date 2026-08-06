@@ -107,7 +107,7 @@ ops = ["Login"]
 
 [[httpPlugins]]
 name = "allowed-ports"
-addr = "127.0.0.1:7201"
+addr = "127.0.0.1:9000"
 path = "/handler"
 ops = ["NewProxy"]
 ```

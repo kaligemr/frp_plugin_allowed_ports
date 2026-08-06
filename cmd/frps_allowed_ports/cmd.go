@@ -11,7 +11,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-const version = "1.0.2"
+const version = "1.0.3"
 
 var (
 	showVersion bool
@@ -21,14 +21,14 @@ var (
 )
 
 func init() {
-	rootCmd.PersistentFlags().BoolVarP(&showVersion, "version", "v", false, "version")
-	rootCmd.PersistentFlags().StringVarP(&bindAddr, "bind_addr", "l", "127.0.0.1:9000", "bind address")
-	rootCmd.PersistentFlags().StringVarP(&portsFile, "ports_file", "p", "./ports", "ports file")
+	rootCmd.PersistentFlags().BoolVarP(&showVersion, "version", "v", false, "版本信息")
+	rootCmd.PersistentFlags().StringVarP(&bindAddr, "bind_addr", "l", "127.0.0.1:9000", "监听地址")
+	rootCmd.PersistentFlags().StringVarP(&portsFile, "ports_file", "p", "./ports", "配置文件")
 }
 
 var rootCmd = &cobra.Command{
-	Use:   "fp-multiuser",
-	Short: "fp-multiuser 是 frp 服务器插件，用于支持多用户自定义配置允许的端口、域名范围",
+	Use:   "frp-allowed-ports",
+	Short: "frp-allowed-ports 是 frp 服务器插件，用于支持多用户自定义配置允许的端口、域名范围",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if showVersion {
 			fmt.Println(version)
@@ -37,7 +37,7 @@ var rootCmd = &cobra.Command{
 
 		portslist, err := ParseportsFromFile(portsFile)
 		if err != nil {
-			log.Printf("Warning: failed to parse ports file %q: %v", portsFile, err)
+			log.Printf("警告：无法解析端口配置文件 %q：%v", portsFile, err)
 		} else {
 			log.Printf("从 %s 文件中加载了 %d 个用户",portsFile ,len(portslist) )
 		}

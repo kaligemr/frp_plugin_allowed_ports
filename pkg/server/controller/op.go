@@ -43,7 +43,6 @@ func contains(s []string, str string) bool {
 //   - 纯数字：精确匹配单个端口
 func matchPort(rule string, port int) bool {
 	rule = strings.TrimSpace(strings.ToLower(rule))
-	fmt.Println("[调试]] 规则:%s\t, 端口:%s\t",rule ,port )
 
 	// all 等价于 1-65535
 	if rule == "all" {
@@ -72,7 +71,6 @@ func matchPort(rule string, port int) bool {
 	if err != nil {
 		return false
 	}
-	fmt.Println("调试: matchPort 返回 p: %s\t", p)
 	return p == port
 }
 
@@ -88,7 +86,6 @@ func matchDomain(rule string, domain string) bool {
 
 	// all 匹配任意域名
 	if rule == "all" {
-	    fmt.Println("[调试] 允许域名 - all规则 ")
 		return true
 	}
 
