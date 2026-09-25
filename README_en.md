@@ -12,9 +12,9 @@ This project has been maintained through several forks:
 |-------|------------|--------|---------|
 | Original author | [Parmicciano/frp_plugin_allowed_ports](https://github.com/Parmicciano/frp_plugin_allowed_ports) | No longer maintained | Apache-2.0 |
 | Second maintainer | [gainskills/frp_plugin_allowed_ports](https://github.com/gainskills/frp_plugin_allowed_ports) | No longer maintained | Apache-2.0 |
-| **Current maintainer** | [**kaligemr/frp_plugin_allowed_ports**](https://github.com/kaligemr/frp_plugin_allowed_ports) | **Active** | Apache-2.0 |
+| **Current maintainer** | [**kaligemr/frp_plugin_allowed_ports**](https://github.com/kaligemr/frp_plugin_allowed_ports) | **Probably no longer maintained** | Apache-2.0 |
 
-Note: "Active" does not mean continuously maintained; this repository may stop being maintained at any time.
+Note: Maintainers rarely maintain this warehouse. But we accept external Pull Requests. We also accept partner applications.
 
 ### Features
 
